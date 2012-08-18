@@ -3,7 +3,7 @@
 #############################################################
 
 set :application, "narabazi"
-set :deploy_to, "/collective/narabazi"
+set :deploy_to, "collective/narabazi"
 
 #############################################################
 #    Settings
@@ -11,7 +11,7 @@ set :deploy_to, "/collective/narabazi"
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
-set :use_sudo, true
+set :use_sudo, false
 set :scm_verbose, true
 
 #############################################################
@@ -19,7 +19,7 @@ set :scm_verbose, true
 #############################################################
 
 set :user, "galligalli01"
-set :domain, "galligalli.org"
+set :domain, "182.50.148.1"
 server domain, :app, :web
 role :db, domain, :primary => true
 
@@ -28,6 +28,8 @@ role :db, domain, :primary => true
 #############################################################
 
 set :scm, :git
+set :scm_command, "C:\Users\Yeti\AppData\Local\GitHub\PortableGit_8810fd5c2c79c73adcc73fd0825f3b32fdb816e7\bin" #change to my settings
+set :local_scm_commander, "git"
 set :branch, "master"
 set :repository,  "git@github.com:sakarp/narabazi.git"
 set :deploy_via, :remote_cache
