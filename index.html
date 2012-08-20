@@ -17,60 +17,80 @@
   </head>
 
   <body>
-    <h1><em>Narabazi</em></h1>
-    
+    <section>
+      <header id="header">
+        <h1><em>Narabazi</em></h1>
+      </header>
+    </section>    
 
-  <div id="maincontainer">
-  
-    <div id="contentwrapper">
-      <div id="contentcolumn">
-        <div class="innertube" id="smap"|>
-          <div id="map"></div>
+    <section id="maincontainer">
+    
+      <div id="contentwrapper">
+        <div id="contentcolumn">
+          <div class="innertube">
+            <div id="map"></div>
+          </div>
         </div>
       </div>
-    </div>
+      
+      <div id="leftcolumn" class="column">
+        <div class="innertube" id="leftcolumn">
+          <p></p>      
+        </div>
+      </div>
+      
+      <div id="rightcolumn" class="column">
+        <div class="innertube">
+          <h2>Current links</h2>
+          <div id="link_list"></div>
+          <p id="link_add">Add a new link</p>
+        </div>
+      </div>
     
-    <div id="leftcolumn" class="column">
-      <div class="innertube" id="leftcolumn"></div>
-    </div>
-    
-    <div id="rightcolumn" class="column">
-      <div class="innertube"></div>
-    </div>
+    </section>
   
-  </div>
+    <section>
+      <header><h2>Some info that might help:</h2></header>
+      <ul>
+        <li>
+          <strong>Wax</strong>
+          the basis from which we access leaflef. lets us use a tile from mapbox.
+        </li>
+        <li>
+          <strong><a href="http://leaflet.cloudmade.com/reference.html" target="_blank">Leaflet</a></strong>
+          is the map builder and also is a simple tool library for the map.
+        </li>
+        <li>
+          <strong><a href="https://github.com/ded/reqwest/" target="_blank">reqwest</a></strong>
+          ajax library
+        </li>
+        
+      </ul>
+    </section>
   
-  <div class="left"></div>
-
-<div>
-  <li>
-    <strong>Wax</strong> the basis from which we access leaflef. lets us use a tile from mapbox.
-  </li>
-  <li>
-    <strong>Leaflet</strong> is the map builder and also is a simple tool library for the map.
-  </li>
-</div>
-
-    <div>
-      <h2>Our repos:</h2>
-        <ul>
-          <li>Adam: <a target="_blank" href="https://github.com/rek">https://github.com/rek</a></li>
-          <li>Dipesh: <a target="_blank" href="https://github.com/dipeshwor">https://github.com/dipeshwor</a></li>
-	       <li>Kishor: <a target="_blank" href="https://github.com/dipeshwor">https://github.com/gyan007</a></li>
-  			 <li>Anshu: <a target="_blank" href="https://github.com/Anshu">https://github.com/khadkanshu</a></li>
-          <li>Samarpan: <a target="_blank" href="https://github.com/SamarpanRai">https://github.com/SamarpanRai</a></li>
-		</ul>    
-      <h2>Active internal project urls:</h2>
-        <ul id="project_urls">
-          <script type="text/javascript" >
-            $(document).ready(function() {
-              $.each(Narabazi.url, function(i, n){
-                $('#project_urls').append('<li><a href="'+n+'">'+i+'</a></li>');
-              });
+    <section>
+      <header><h2>Our repos:</h2></header>
+      <ul>
+        <li><a target="_blank" href="https://github.com/sakarp/narabazi">Master repo</a></li>
+        <li>Adam: <a target="_blank" href="https://github.com/rek">https://github.com/rek</a></li>
+        <li>Dipesh: <a target="_blank" href="https://github.com/dipeshwor">https://github.com/dipeshwor</a></li>
+        <li>Kishor: <a target="_blank" href="https://github.com/dipeshwor">https://github.com/gyan007</a></li>
+		    <li>Anshu: <a target="_blank" href="https://github.com/Anshu">https://github.com/khadkanshu</a></li>
+        <li>Samarpan: <a target="_blank" href="https://github.com/SamarpanRai">https://github.com/SamarpanRai</a></li>
+	    </ul>  
+    </section>
+    <section>		      
+      <header><h2>Active internal project urls:</h2></header>
+      <ul id="project_urls">
+        <script type="text/javascript" >
+          $(document).ready(function() {
+            $.each(Narabazi.url, function(i, n){
+              $('#project_urls').append('<li><a href="'+n+'">'+i+'</a></li>');
             });
-          </script>
-		</ul>    
-    </div>
+          });
+        </script>
+     	</ul>      
+    </section>
   </body>
 
 </html>
