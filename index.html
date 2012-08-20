@@ -53,15 +53,31 @@
         <div class="innertube">
           <h2>Current links</h2>
           <script id="linkTemplate" type="text/x-jsrender">
-            <div>Main title: {{>title}} </div>
             {{for links}}
               <div>Title: {{>title}} </div>
               <div>Link: {{>link}} </div>
+              <div id="button_link_delete" class="button">Click here to delete</div>
 		        {{/for}}
-            <div id="button_link_delete" class="button">Click here to delete</div>
+            <div id="button_link_add" class="button">Add a new link</div>
           </script>
           <div id="link_list">Loading...</div>
-          <div id="link_add" class="button">Add a new link</div>
+          
+          <script id="addLinkTemplate" type="text/x-jsrender">
+            <select id="selType" data-link="selectedType">
+        			<option value="none">Choose...</option>
+        			{{for ~types}}
+        				<option value="{{:#index}}">{{>name}}</option>
+        			{{/for}}
+        		</select>
+            
+            <div data-link="visible{: selectedType!=='none' }">
+              <div class="subhead">Name:</div> 
+              <div><input data-link="name" /></div>
+            </div>
+
+          </script>
+          <div id="link_add"></div>
+		
         </div>
       </div>
     
