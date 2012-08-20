@@ -72,15 +72,15 @@
         		</select>
             
             <div data-link="visible{: selectedType!=='none' }">
-              <div class="subhead">Name:</div> 
-              <div><input data-link="name" /></div>
+              <div class="subhead">Title:</div> 
+              <div><input data-link="title" /></div>
 
               <div class="subhead">Link:</div> 
               <div><input data-link="link" /></div>
             </div>
 
             <div data-link="visible{: ~and(selectedType!=='none', link) }">
-            link donee
+      			  <div id="submitAddLink" class="button">Add!</div>
             </div>
           </script>
           <div id="link_add"></div>
