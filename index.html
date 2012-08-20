@@ -23,7 +23,7 @@
   <body>
     <section>
       <header id="header">
-        <h1><em>Narabazi</em></h1>
+<!--        <h1><em>Narabazi</em></h1>-->
       </header>
     </section>    
 
@@ -63,6 +63,7 @@
           <div id="link_list">Loading...</div>
           
           <script id="addLinkTemplate" type="text/x-jsrender">
+
             <select id="selType" data-link="selectedType">
         			<option value="none">Choose...</option>
         			{{for ~types}}
@@ -73,8 +74,14 @@
             <div data-link="visible{: selectedType!=='none' }">
               <div class="subhead">Name:</div> 
               <div><input data-link="name" /></div>
+
+              <div class="subhead">Link:</div> 
+              <div><input data-link="link" /></div>
             </div>
 
+            <div data-link="visible{: ~and(selectedType!=='none', link) }">
+            link donee
+            </div>
           </script>
           <div id="link_add"></div>
 		
