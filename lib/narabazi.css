@@ -11,14 +11,14 @@
 #leftcolumn
 {
   float: left;
-  width: 230px; /*Width of left column*/
+  width: 228px; /*Width of left column*/
   margin-left: -100%;
 }
 
 #rightcolumn
 {
   float: left;
-  width: 230px; /*Width of right column*/
+  width: 228px; /*Width of right column*/
   margin-left: -230px; /*Set left marginto -(RightColumnWidth)*/
 }
 
