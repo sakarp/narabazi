@@ -5,15 +5,19 @@
     <link rel="stylesheet" href="lib/wax/ext/leaflet.css" />
     <link rel="stylesheet" href="lib/narabazi.css" />
 
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 
     <!-- leaflet styles: the tile importer -->
-    <script src="lib/wax/ext/leaflet-src.js"></script>
+    <script src="lib/wax/ext/leaflet-src.js" type="text/javascript"></script>
     <!-- wax: extra controls -->
-    <script src="lib/wax/dist/wax.leaf.js"></script>
+    <script src="lib/wax/dist/wax.leaf.js" type="text/javascript"></script>
 
+  	<script src="lib/jsrender.js" type="text/javascript"></script>
+  	<script src="lib/jquery.observable.js" type="text/javascript"></script>
+  	<script src="lib/jquery.views.js" type="text/javascript"></script>
+  	
     <!-- and finally load our codes to use it all -->
-    <script src="lib/narabazi_leaflet.js"></script>
+    <script src="lib/narabazi_leaflet.js" type="text/javascript"></script>
   </head>
 
   <body>
@@ -34,8 +38,14 @@
       </div>
       
       <div id="leftcolumn" class="column">
-        <div class="innertube" id="leftcolumn">
-          <p></p>      
+        <div class="innertube">
+          <h2>Marker info</h2>
+          <script id="infoTemplate" type="text/x-jsrender">
+            <div>Name: {{>name}} </div>
+            <div id="button_delete">Click here to delete</div>
+          </script>
+          <div id="left_info"></div>
+          <div id="button_close">Close</div> 
         </div>
       </div>
       
