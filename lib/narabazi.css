@@ -11,15 +11,15 @@
 #leftcolumn
 {
   float: left;
-  width: 228px; /*Width of left column*/
+  width: 203px; /*Width of left column*/
   margin-left: -100%;
 }
 
 #rightcolumn
 {
   float: left;
-  width: 228px; /*Width of right column*/
-  margin-left: -230px; /*Set left marginto -(RightColumnWidth)*/
+  width: 203px; /*Width of right column*/
+  margin-left: -225px; /*Set left marginto -(RightColumnWidth)*/
 }
 
 .column
@@ -37,4 +37,15 @@
 .left
 {
 	clear: left;
+}
+
+.infoDiv
+{
+  padding: 10px;  
+}
+
+.button
+{
+  text-decoration: underline;
+  cursor: pointer;  
 }

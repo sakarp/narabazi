@@ -37,23 +37,28 @@
         </div>
       </div>
       
-      <div id="leftcolumn" class="column">
+      <div id="leftcolumn" class="column infoDiv">
         <div class="innertube">
           <h2>Marker info</h2>
           <script id="infoTemplate" type="text/x-jsrender">
             <div>Name: {{>name}} </div>
-            <div id="button_delete">Click here to delete</div>
+            <div id="button_delete" class="button">Click here to delete</div>
           </script>
           <div id="left_info"></div>
-          <div id="button_close">Close</div> 
+          <div id="button_close" class="button">Close info boxes</div> 
         </div>
       </div>
       
-      <div id="rightcolumn" class="column">
+      <div id="rightcolumn" class="column infoDiv">
         <div class="innertube">
           <h2>Current links</h2>
-          <div id="link_list"></div>
-          <p id="link_add">Add a new link</p>
+          <script id="linkTemplate" type="text/x-jsrender">
+            <div>Title: {{>title}} </div>
+            <div>Link: {{>link}} </div>
+            <div id="button_link_delete" class="button">Click here to delete</div>
+          </script>
+          <div id="link_list">Loading...</div>
+          <div id="link_add" class="button">Add a new link</div>
         </div>
       </div>
     
