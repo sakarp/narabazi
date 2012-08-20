@@ -53,8 +53,11 @@
         <div class="innertube">
           <h2>Current links</h2>
           <script id="linkTemplate" type="text/x-jsrender">
-            <div>Title: {{>title}} </div>
-            <div>Link: {{>link}} </div>
+            <div>Main title: {{>title}} </div>
+            {{for links}}
+              <div>Title: {{>title}} </div>
+              <div>Link: {{>link}} </div>
+		        {{/for}}
             <div id="button_link_delete" class="button">Click here to delete</div>
           </script>
           <div id="link_list">Loading...</div>
