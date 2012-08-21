@@ -54,9 +54,11 @@
           <h2>Current links</h2>
           <script id="linkTemplate" type="text/x-jsrender">
             {{for links}}
-              <div>Title: {{>title}} </div>
-              <div>Link: {{>link}} </div>
-              <div id="button_link_delete" class="button">Click here to delete</div>
+              <div class="link_block">
+                <div>Title: {{>title}} </div>
+                <div>Link: {{>link}} </div>
+                <div class="button_link_delete button" _data="{{>id}}">Click here to delete</div>
+              </div>
 		        {{/for}}
             <div id="button_link_add" class="button">Add a new link</div>
           </script>
