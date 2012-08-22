@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<script src='reqwest.min.js'></script>
+	</head>
+<body>
+	hel
+	<script language="javascript">
+		var qxml = '<osm-script><query type="node"><has-kv k="name" regv="Patan Dhoka"/></query><print/></osm-script>'
+		var queryStringQL = 'node[%22name%22~%22Patan%20Dhoka%22];%20out%20body;';
+		var testURL = 'http://overpass-api.de/api/interpreter?data=node[%22name%22~%22Patan%20Dhoka%22];%20out%20body;'
+		console.log("i get to #1")
+		reqwest({
+			url: testURL 
+			//'http://overpass-api.de/api/interpreter'
+			, method: 'post'
+			, type: 'xml'
+			//, data: queryStringQL
+			, success: function (rep) {
+				console.log("i get here")
+				console.log(resp)
+			}
+			, error: function(resp) {
+				console.log("i'm an error")
+				console.log(resp)
+				}
+		})
+	</script>
+</body>
+</html>
+http://overpass-api.de/api/interpreter?data=node["name"~"Patan Dhoka"]; out body;

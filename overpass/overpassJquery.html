@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<script src='jquery-1.7.2.min.js'></script>
+	</head>
+<body>
+	heloow
+	<script language="javascript">
+		var qxml = '<osm-script><query type="node"><has-kv k="name" regv="Patan Dhoka"/></query><print/></osm-script>'
+		var queryStringQL = 'node["name"~"Patan Dhoka"]; out body;';
+		console.log("i get to #1")
+		reqwest({
+			url: 'http://overpass.osm.rambler.ru/cgi/'
+			, method: 'post'
+			, type: 'xml'
+			, data: qxml
+			, success: function (rep) {
+				console.log("i get here")
+				console.log(resp)
+			}
+			, error: function(resp) {
+				console.log("i'm an error")
+				console.log(resp)
+				}
+		})
+	</script>
+</body>
+</html>
