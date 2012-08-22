@@ -1,27 +1,27 @@
 <html>
 	<head>
 		<script src='jquery-1.7.2.min.js'></script>
+	  <script src='../lib/wax/lib/reqwest.min.js'></script>
 	</head>
 <body>
-	heloow
+	<strong>this should load in one second:</strong>
 	<script language="javascript">
-		var qxml = '<osm-script><query type="node"><has-kv k="name" regv="Patan Dhoka"/></query><print/></osm-script>'
 		var queryStringQL = 'node["name"~"Patan Dhoka"]; out body;';
-		console.log("i get to #1")
-		reqwest({
-			url: 'http://overpass.osm.rambler.ru/cgi/'
-			, method: 'post'
-			, type: 'xml'
-			, data: qxml
-			, success: function (rep) {
-				console.log("i get here")
-				console.log(resp)
-			}
-			, error: function(resp) {
-				console.log("i'm an error")
-				console.log(resp)
-				}
-		})
+			
+		$.ajax({
+			url: "http://overpass-api.de/api/interpreter?data=" + queryStringQL,
+			type: 'GET',
+			crossDomain: true,
+			success: function(data){
+				jQuery.each(data, function(i, val) {
+	        $("#data").append(i + " : " + val + "<br/>");
+      	});
+			},
+			error: function(data){
+				console.log('boo');
+			},
+		});			
 	</script>
+  <div id="data"></div>
 </body>
 </html>
