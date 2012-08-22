@@ -1,27 +1,30 @@
 <html>
 	<head>
-		<script src='jquery-1.7.2.min.js'></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	  <script src='../lib/wax/lib/reqwest.min.js'></script>
 	</head>
-<body>
-	<strong>this should load in one second:</strong>
-	<script language="javascript">
-		var queryStringQL = 'node["name"~"Patan Dhoka"]; out body;';
-			
-		$.ajax({
-			url: "http://overpass-api.de/api/interpreter?data=" + queryStringQL,
-			type: 'GET',
-			crossDomain: true,
-			success: function(data){
-				jQuery.each(data, function(i, val) {
-	        $("#data").append(i + " : " + val + "<br/>");
-      	});
-			},
-			error: function(data){
-				console.log('boo');
-			},
-		});			
-	</script>
-  <div id="data"></div>
-</body>
+  <body>
+
+  	<strong>this should load in one second:</strong>
+  	<script language="javascript">
+      // hacked from this guy: view-source:http://ubahnverleih.de/osm/tourist/
+  
+  		var queryStringQL = 'node["name"~"Patan Dhoka"]; out body;';
+  			
+  		$.ajax({
+  			url: "http://overpass-api.de/api/interpreter?data=" + queryStringQL,
+  			type: 'GET',
+  			crossDomain: true,
+  			success: function(data){
+  				jQuery.each(data, function(i, val) {
+  	        $("#data").append(i + " : " + val + "<br/>");
+        	});
+  			},
+  			error: function(data){
+  				console.log('boo');
+  			},
+  		});			
+  	</script>
+    <div id="data"></div>
+  </body>
 </html>
