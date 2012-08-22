@@ -65,25 +65,25 @@
           <div id="link_list">Loading...</div>
           
           <script id="addLinkTemplate" type="text/x-jsrender">
-
-            <select id="selType" data-link="selectedType">
-        			<option value="none">Choose...</option>
-        			{{for ~types}}
-        				<option value="{{:#index}}">{{>name}}</option>
-        			{{/for}}
-        		</select>
-            
-            <div data-link="visible{: selectedType!=='none' }">
-              <div class="subhead">Title:</div> 
-              <div><input data-link="title" /></div>
-
-              <div class="subhead">Link:</div> 
-              <div><input data-link="link" /></div>
-            </div>
-
-            <div data-link="visible{: ~and(selectedType!=='none', link) }">
-      			  <div id="submitAddLink" class="button">Add!</div>
-            </div>
+            <form id="linkAddForm">
+              <select id="selType" data-link="selectedType">
+          			<option value="none">Choose...</option>
+          			{{for ~types}}
+          				<option value="{{:#index}}">{{>name}}</option>
+          			{{/for}}
+          		</select>
+              
+              <div data-link="visible{: selectedType!=='none' }" id="linkAddOptions">
+                <div class="subhead">Title:</div> 
+                <div><input data-link="title" /></div>
+  
+                <div class="subhead">Link:</div> 
+                <div><input data-link="link" /></div>
+                <div _data-link="visible{: ~and(selectedType!=='none', link) }">
+          			  <div id="submitAddLink" class="button">Add!</div>
+                </div>
+              </div>
+            </form>
           </script>
           <div id="link_add"></div>
 		
@@ -131,7 +131,8 @@
       <header><h2>Active internal project urls:</h2></header>
       <ul id="project_urls">
         <script type="text/javascript" >
-          $(document).ready(function() {
+          $(function()
+          {
             $.each(Narabazi.url, function(i, n){
               $('#project_urls').append('<li><a href="'+n+'">'+i+'</a></li>');
             });
