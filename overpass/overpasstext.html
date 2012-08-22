@@ -21,7 +21,9 @@
 			}
 			, error: function(resp) {
 				console.log("i'm an error")
-				console.log(resp)
+			console.log(resp.getError())
+			console.log(resp.error)
+			console.log(resp.responseText)
 				}
 		})
 	</script>
