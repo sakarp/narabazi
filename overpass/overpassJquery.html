@@ -9,15 +9,17 @@
   	<script language="javascript">
       // hacked from this guy: view-source:http://ubahnverleih.de/osm/tourist/
   
-  		var queryStringQL = 'node["name"~"Patan Dhoka"]; out body;';
-  			
+  		var qs = encodeURIComponent('node["office"~"Government|Political Party"](27.706940, 85.317528, 27.724039, 85.340973); out body;');
+		var url =	'http://overpass-api.de/api/interpreter?data=' + qs ;
   		$.ajax({
-  			url: "http://overpass-api.de/api/interpreter?data=" + queryStringQL,
+  			url: url,
   			type: 'GET',
   			crossDomain: true,
   			success: function(data){
+			    console.log(data)
   				jQuery.each(data, function(i, val) {
-  	        $("#data").append(i + " : " + val + "<br/>");
+  	      //  $("#data").append(val);
+		  
         	});
   			},
   			error: function(data){
