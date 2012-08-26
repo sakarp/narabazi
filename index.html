@@ -68,7 +68,7 @@
             <form id="linkAddForm">
               <select id="selType" data-link="NarabaziLink.selectedType">
           			<option value="none">Choose...</option>
-          			{{for ~types}}
+          			{{for ~getTypes}}
           				<option value="{{:#index}}">{{>name}}</option>
           			{{/for}}
           		</select>
