@@ -66,20 +66,20 @@
           
           <script id="addLinkTemplate" type="text/x-jsrender">
             <form id="linkAddForm">
-              <select id="selType" data-link="selectedType">
+              <select id="selType" data-link="NarabaziLink.selectedType">
           			<option value="none">Choose...</option>
           			{{for ~types}}
           				<option value="{{:#index}}">{{>name}}</option>
           			{{/for}}
           		</select>
               
-              <div data-link="visible{: selectedType!=='none' }" id="linkAddOptions">
+              <div data-link="visible{: NarabaziLink.selectedType!=='none' }" id="linkAddOptions">
                 <div class="subhead">Title:</div> 
                 <div><input data-link="title" /></div>
   
                 <div class="subhead">Link:</div> 
                 <div><input data-link="link" /></div>
-                <div _data-link="visible{: ~and(selectedType!=='none', link) }">
+                <div _data-link="visible{: ~NarabaziLink.and(NarabaziLink.selectedType!=='none', link) }">
           			  <div id="submitAddLink" class="button">Add!</div>
                 </div>
               </div>
