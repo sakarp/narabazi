@@ -134,7 +134,7 @@
         <script type="text/javascript" >
           $(function()
           {
-            $.each(Narabazi.url, function(i, n){
+            $.each(Narabazi.url(), function(i, n){
               $('#project_urls').append('<li><a href="'+n+'">'+i+'</a></li>');
             });
           });
