@@ -5,7 +5,8 @@
     <link rel="stylesheet" href="lib/wax/ext/leaflet.css" />
     <link rel="stylesheet" href="lib/narabazi.css" />
 
-    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<!--    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>-->
+    <script src="lib/jquery-1.8.0.min.js" type="text/javascript"></script>
 
     <!-- leaflet styles: the tile importer -->
     <script src="lib/wax/ext/leaflet-src.js" type="text/javascript"></script>
@@ -66,22 +67,20 @@
           
           <script id="addLinkTemplate" type="text/x-jsrender">
             <form id="linkAddForm">
-              <select id="selType" data-link="NarabaziLink.selectedType">
+              <select id="selType" data-link="type">
           			<option value="none">Choose...</option>
           			{{for ~getTypes}}
           				<option value="{{:#index}}">{{>name}}</option>
           			{{/for}}
           		</select>
               
-              <div data-link="visible{: NarabaziLink.selectedType!=='none' }" id="linkAddOptions">
+              <div data-link="visible{: type!=='none' }" id="linkAddOptions">
                 <div class="subhead">Title:</div> 
                 <div><input data-link="title" /></div>
   
                 <div class="subhead">Link:</div> 
                 <div><input data-link="link" /></div>
-                <div _data-link="visible{: ~NarabaziLink.and(NarabaziLink.selectedType!=='none', link) }">
-          			  <div id="submitAddLink" class="button">Add!</div>
-                </div>
+        			  <div id="submitAddLink" class="button">Add!</div>
               </div>
             </form>
           </script>
