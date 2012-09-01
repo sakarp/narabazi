@@ -1,0 +1,154 @@
+<html>
+  <head>
+    <title>Narabazi</title>
+    
+    <link rel="stylesheet" href="lib/wax/ext/leaflet.css" />
+    <link rel="stylesheet" href="lib/narabazi_backend.css" />
+
+<!--    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>-->
+    <script src="lib/jquery-1.8.0.min.js" type="text/javascript"></script>
+
+    <!-- leaflet styles: the tile importer -->
+    <script src="lib/wax/ext/leaflet-src.js" type="text/javascript"></script>
+    <!-- wax: extra controls -->
+    <script src="lib/wax/dist/wax.leaf.js" type="text/javascript"></script>
+
+  	<script src="lib/jsrender.js" type="text/javascript"></script>
+  	<script src="lib/jquery.observable.js" type="text/javascript"></script>
+  	<script src="lib/jquery.views.js" type="text/javascript"></script>
+  	
+    <!-- and finally load our codes to use it all -->
+    <script src="lib/Narabazi.js" type="text/javascript"></script>
+    <script src="lib/NarabaziLocation.js" type="text/javascript"></script>
+    <script src="lib/NarabaziBackend.js" type="text/javascript"></script>    
+  </head>
+
+  <body>
+    <section>
+      <header id="header">
+<!--        <h1><em>Narabazi</em></h1>-->
+      </header>
+    </section>    
+
+    <section id="maincontainer">
+    
+      <div id="contentwrapper">
+        <div id="contentcolumn">
+          <div class="innertube">
+            <div id="map"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="leftcolumn" class="column infoDiv">
+        <div class="innertube">
+          <h2>Marker info</h2>
+          <script id="infoTemplate" type="text/x-jsrender">
+            <div>Name: {{>name}} </div>
+            <div id="button_delete" class="button">Click here to delete</div>
+          </script>
+          <div id="left_info"></div>
+          <div id="button_close" class="button">Close info boxes</div> 
+        </div>
+      </div>
+      
+      <div id="rightcolumn" class="column infoDiv">
+        <div class="innertube">
+          <h2>Current links</h2>
+          <script id="linkTemplate" type="text/x-jsrender">
+            {{for links}}
+              <div class="link_block">
+                <div>Title: {{>title}} </div>
+                <div>Link: {{>link}} </div>
+                <div class="button_link_delete button" _data="{{>id}}">Click here to delete</div>
+              </div>
+		        {{/for}}
+            <div id="button_link_add" class="button">Add a new link</div>
+          </script>
+          <div id="link_list">Loading...</div>
+          
+          <script id="addLinkTemplate" type="text/x-jsrender">
+            <form id="linkAddForm">
+              <select id="selType" data-link="type">
+          			<option value="none">Choose...</option>
+          			{{for ~getTypes}}
+          				<option value="{{:#index}}">{{>name}}</option>
+          			{{/for}}
+          		</select>
+              
+              <div data-link="visible{: type!=='none' }" id="linkAddOptions">
+                <div class="subhead">Title:</div> 
+                <div><input data-link="title" /></div>
+  
+                <div class="subhead">Link:</div> 
+                <div><input data-link="link" /></div>
+        			  <div id="submitAddLink" class="button">Add!</div>
+              </div>
+            </form>
+          </script>
+          <div id="link_add"></div>
+		
+        </div>
+      </div>
+    
+    </section>
+  
+    <section>
+      <header><h2>Some info that might help:</h2></header>
+      <ul>
+        <li>
+          <strong><a href="http://mapbox.com/wax/interaction-leaf-native.html">Wax</a></strong>
+          the basis from which we access leaflef. lets us use a tile from mapbox.
+        </li>
+        <li>
+          <strong><a href="http://leaflet.cloudmade.com/reference.html" target="_blank">Leaflet</a></strong>
+          is the map builder and also is a simple tool library for the map.
+        </li>
+        <li>
+          <strong><a href="https://github.com/ded/reqwest/" target="_blank">reqwest</a></strong>
+          ajax library
+        </li>
+        <li>
+          <strong><a href="http://borismoore.github.com/jsviews/demos/demos.html" target="_blank">JsViews and JsRender</a></strong>
+          jquery templating engine. this is a little advanced, but i want to move into using this eventually
+        </li>
+        
+        
+      </ul>
+    </section>
+  
+    <section>
+      <header><h2>Main links:</h2></header>
+      <ul>
+        <li><a target="_blank" href="http://www.trac.narabazi.karkhana.asia/">Trac</a></li>
+        <li><a target="_blank" href="http://www.narabazi.karkhana.asia/">Narabazi</a></li>
+	    </ul>  
+    </section>
+  
+    <section>
+      <header><h2>Our repos:</h2></header>
+      <ul>
+        <li><a target="_blank" href="https://github.com/sakarp/narabazi">Master repo</a></li>
+        <li>Adam: <a target="_blank" href="https://github.com/rek">https://github.com/rek</a></li>
+        <li>Dipesh: <a target="_blank" href="https://github.com/dipeshwor">https://github.com/dipeshwor</a></li>
+        <li>Kishor: <a target="_blank" href="https://github.com/dipeshwor">https://github.com/gyan007</a></li>
+		    <li>Anshu: <a target="_blank" href="https://github.com/Anshu">https://github.com/khadkanshu</a></li>
+        <li>Samarpan: <a target="_blank" href="https://github.com/SamarpanRai">https://github.com/SamarpanRai</a></li>
+	    </ul>  
+    </section>
+    <section>		      
+      <header><h2>Active internal project urls:</h2></header>
+      <ul id="project_urls">
+        <script type="text/javascript" >
+          $(function()
+          {
+            $.each(Narabazi.url(), function(i, n){
+              $('#project_urls').append('<li><a href="'+n+'">'+i+'</a></li>');
+            });
+          });
+        </script>
+     	</ul>      
+    </section>
+  </body>
+
+</html>
