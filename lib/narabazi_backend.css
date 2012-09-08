@@ -1,3 +1,36 @@
+html
+{
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #222;
+}
+
+#login_box_button {
+  position: relative;  
+  -moz-box-shadow: 10px 10px 5px #888;
+  -webkit-box-shadow: 10px 10px 5px #888;
+  box-shadow: 10px 10px 5px #888;
+  -moz-border-radius: 0px 0px 5px 0px;
+  border-radius: 0px 0px 5px 0px;
+  padding: 1em; 
+  font-size: 2em;   
+  border: 1px solid #000; 
+  background: #ddd;
+  color: #333; 
+  padding: 10px; 
+  margin: -8px;
+  width: 20px;
+  height: 30px;
+  cursor: pointer;
+}
+
+#loading_icon
+{
+  margin-left: -5px;
+  width: 30px;
+  display: none;
+}
+
 #contentwrapper
 {
   float: left;
