@@ -208,7 +208,7 @@ Test.prototype = {
 			}
 
 			if ( bad === 0 ) {
-				ol.style.display = "none";
+				ol.style.display = "block";
 			}
 
 			// `b` initialized at top of scope

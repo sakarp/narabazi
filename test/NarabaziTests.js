@@ -21,12 +21,16 @@ test( "Get url string", function() {
 
 test( "Baseurl", function() {
   // get the prod url by default
-  var reg = new RegExp("^"+Narabazi.options.prodUrl+".*");
-  ok(reg.test(Narabazi.getBaseUrl()), 'the baseurl for the default env is correct');
+  equal(Narabazi.options.prodUrl, Narabazi.getBaseUrl(), 'the baseurl for the default env is correct');
   
   Narabazi.options.env = 'dev';
+  equal(Narabazi.options.devUrl, Narabazi.getBaseUrl(), 'the baseurl for the dev env matches');
+
   var reg = new RegExp("^"+Narabazi.options.devUrl+".*");
-  ok(reg.test(Narabazi.getBaseUrl()), 'the baseurl for the dev env matches');
+  ok(reg.test(Narabazi.url().locations), 'getting a url comes in the right env');
+
+  Narabazi.options.env = 'prod';
+  equal(Narabazi.options.prodUrl, Narabazi.getBaseUrl(), 'changing back to prod env is correct');
 
 });
 
