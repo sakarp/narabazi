@@ -5,80 +5,38 @@ html
   color: #222;
 }
 
-#login_box_button {
-  position: relative;  
-  -moz-box-shadow: 10px 10px 5px #888;
-  -webkit-box-shadow: 10px 10px 5px #888;
-  box-shadow: 10px 10px 5px #888;
-  -moz-border-radius: 0px 0px 5px 0px;
-  border-radius: 0px 0px 5px 0px;
-  padding: 1em; 
-  font-size: 2em;   
-  border: 1px solid #000; 
-  background: #ddd;
-  color: #333; 
-  padding: 10px; 
-  margin: -8px;
-  width: 20px;
-  height: 30px;
-  cursor: pointer;
+.nav li
+{
+  padding-top: 3px;
 }
 
 #loading_icon
 {
-  margin-left: -5px;
-  width: 30px;
+
+  padding-top: 9px;
+  padding-bottom: 9px;
   display: none;
-}
-
-#contentwrapper
-{
-  float: left;
-  width: 100%;
-}
-
-#contentcolumn{
-  margin: 0 230px 0 230px; /*Margins for content column. Should be "0 RightColumnWidth 0 LeftColumnWidth*/
-}
-
-#leftcolumn
-{
-  float: left;
-  width: 203px; /*Width of left column*/
-  margin-left: -100%;
-}
-
-#rightcolumn
-{
-  float: left;
-  width: 203px; /*Width of right column*/
-  margin-left: -225px; /*Set left marginto -(RightColumnWidth)*/
-}
-
-.column
-{
-  border: 1px solid;
-  display: none;  
 }
 
 #map
 {
   width: 100%; 
-  height: 100%; 
-}
-
-.left
-{
-	clear: left;
-}
-
-.infoDiv
-{
-  padding: 10px;  
+  height: 60%; 
 }
 
 .button
 {
   text-decoration: underline;
   cursor: pointer;  
+}
+
+.container .hero-unit
+{
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+}
+
+#second-row
+{
+  padding-top: 10px;
 }

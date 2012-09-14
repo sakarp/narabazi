@@ -4,43 +4,50 @@
     
     <link rel="stylesheet" href="lib/wax/ext/leaflet.css" />
     <link rel="stylesheet" href="lib/narabazi_backend.css" />
-    
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
     <script type="text/javascript" src="lib/head.load.min.js"></script>
     <script type="text/javascript">
       // lib/jquery-1.8.0.min.js <- or locally
       // http://code.jquery.com/jquery-latest.min.js
       head.js("lib/jquery-1.8.0.min.js", function() {
-        head.js("lib/NarabaziInit.js"); // when jQuery is ready, load our app
+        head.js("bootstrap/js/bootstrap.min.js", "lib/NarabaziInit.js"); // when jQuery is ready, load our app
       });
     </script>
   </head>
 
   <body>
-  
-    <div id="login_box_button">
-      <span id="login_box_text">A</span>
-      <img src="images/loading.gif" id="loading_icon">
-    </div>
-      
+     
     <section>
       <header id="header">
-<!--        <h1><em>Narabazi</em></h1>-->
+        <div class="navbar navbar-inverse navbar-fixed-top">
+          <div class="navbar-inner">
+            <div class="container">
+              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </a>
+              <a class="brand" href="#">Narabazi</a>
+              <div class="nav-collapse collapse">
+                <ul class="nav">
+                  <li class="active" id="login_box_button"><a href="#" id="login_box_text">Authenticate</a><img src="images/loading.gif" id="loading_icon"></li>
+                </ul>
+              </div><!--/.nav-collapse -->
+            </div>
+          </div>
+        </div>
       </header>
     </section>    
 
-    <section id="maincontainer">
+    <section class="container">
 
-    
-      <div id="contentwrapper">
-        <div id="contentcolumn">
-          <div class="innertube">
-            <div id="map"></div>
-          </div>
-        </div>
+      <div class="hero-unit">
+        <div id="map"></div>
       </div>
-      
-      <div id="leftcolumn" class="column infoDiv">
-        <div class="innertube">
+
+      <div class="row">
+        <div class="span4 infoDiv">
           <h2>Marker info</h2>
           <script id="infoTemplate" type="text/x-jsrender">
             <div>Name: {{>name}} </div>
@@ -49,10 +56,9 @@
           <div id="left_info"></div>
           <div id="button_close" class="button">Close info boxes</div> 
         </div>
-      </div>
       
-      <div id="rightcolumn" class="column infoDiv">
-        <div class="innertube">
+       <div class="span4 infoDiv">
+
           <h2>Current links</h2>
           <script id="linkTemplate" type="text/x-jsrender">
             {{for links}}
@@ -88,66 +94,53 @@
           <div id="link_add"></div>
 		
         </div>
+
       </div>
-    
-    </section>
+      <div class="row" id="second-row">
+        <div class="span4">
+          <header><h2>Links:</h2></header>
+          <ul>
+            <li>
+              <strong><a href="http://mapbox.com/wax/interaction-leaf-native.html">Wax</a></strong>
+              the basis from which we access leaflef. lets us use a tile from mapbox.
+            </li>
+            <li>
+              <strong><a href="http://leaflet.cloudmade.com/reference.html" target="_blank">Leaflet</a></strong>
+              is the map builder and also is a simple tool library for the map.
+            </li>
+            <li>
+              <strong><a href="https://github.com/ded/reqwest/" target="_blank">reqwest</a></strong>
+              ajax library
+            </li>
+            <li>
+              <strong><a href="http://borismoore.github.com/jsviews/demos/demos.html" target="_blank">JsViews and JsRender</a></strong>
+              jquery templating engine. this is a little advanced, but i want to move into using this eventually
+            </li>
+            <li><strong><a href="http://twitter.github.com/bootstrap">Bootstrap</a></strong> CSS framework</li>            
+          </ul>
+        </div>
+        <div class="span4">
+          <header><h2>Links2:</h2></header>
+          <ul>
+            <li><strong><a target="_blank" href="http://www.trac.narabazi.karkhana.asia/">Trac</a></strong> A list of what we need to do</li>
+            <li><strong><a target="_blank" href="http://www.narabazi.karkhana.asia/">Narabazi</a></strong> The public location for this project</li>
+
+
+          </ul>  
+        </div>
   
-    <section>
-      <header><h2>Some info that might help:</h2></header>
-      <ul>
-        <li>
-          <strong><a href="http://mapbox.com/wax/interaction-leaf-native.html">Wax</a></strong>
-          the basis from which we access leaflef. lets us use a tile from mapbox.
-        </li>
-        <li>
-          <strong><a href="http://leaflet.cloudmade.com/reference.html" target="_blank">Leaflet</a></strong>
-          is the map builder and also is a simple tool library for the map.
-        </li>
-        <li>
-          <strong><a href="https://github.com/ded/reqwest/" target="_blank">reqwest</a></strong>
-          ajax library
-        </li>
-        <li>
-          <strong><a href="http://borismoore.github.com/jsviews/demos/demos.html" target="_blank">JsViews and JsRender</a></strong>
-          jquery templating engine. this is a little advanced, but i want to move into using this eventually
-        </li>
-        
-        
-      </ul>
-    </section>
-  
-    <section>
-      <header><h2>Main links:</h2></header>
-      <ul>
-        <li><a target="_blank" href="http://www.trac.narabazi.karkhana.asia/">Trac</a></li>
-        <li><a target="_blank" href="http://www.narabazi.karkhana.asia/">Narabazi</a></li>
-	    </ul>  
-    </section>
-  
-    <section>
-      <header><h2>Our repos:</h2></header>
-      <ul>
-        <li><a target="_blank" href="https://github.com/sakarp/narabazi">Master repo</a></li>
-        <li>Adam:     <a target="_blank" href="https://github.com/rek">https://github.com/rek</a></li>
-        <li>Dipesh:   <a target="_blank" href="https://github.com/dipeshwor">https://github.com/dipeshwor</a></li>
-        <li>Kishor:   <a target="_blank" href="https://github.com/dipeshwor">https://github.com/gyan007</a></li>
-		    <li>Anshu:    <a target="_blank" href="https://github.com/khadkaa">https://github.com/khadkaa</a></li>
-        <li>Samarpan: <a target="_blank" href="https://github.com/SamarpanRai">https://github.com/SamarpanRai</a></li>
-	    </ul>  
-    </section>
-    <section>		      
-      <header><h2>Active internal project urls:</h2></header>
-      <ul id="project_urls">
-        <script type="text/javascript" >
-          /*$(function()
-          {
-            $.each(Narabazi.url(), function(i, n){
-              $('#project_urls').append('<li><a href="'+n+'">'+i+'</a></li>');
-            });
-          });*/
-        </script>
-     	</ul>      
+        <div class="span4">
+          <header><h2>Our repos:</h2></header>
+          <ul>
+            <li><a target="_blank" href="https://github.com/sakarp/narabazi">Master repo</a></li>
+            <li>Adam:     <a target="_blank" href="https://github.com/rek">https://github.com/rek</a></li>
+            <li>Dipesh:   <a target="_blank" href="https://github.com/dipeshwor">https://github.com/dipeshwor</a></li>
+            <li>Kishor:   <a target="_blank" href="https://github.com/dipeshwor">https://github.com/gyan007</a></li>
+            <li>Anshu:    <a target="_blank" href="https://github.com/khadkaa">https://github.com/khadkaa</a></li>
+            <li>Samarpan: <a target="_blank" href="https://github.com/SamarpanRai">https://github.com/SamarpanRai</a></li>
+          </ul>  
+        </div>
+      </div>
     </section>
   </body>
-
 </html>
