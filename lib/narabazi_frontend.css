@@ -1,0 +1,60 @@
+#contentwrapper
+{
+  float: left;
+  width: 100%;
+}
+
+#contentcolumn{
+  margin: 0 230px 0 230px; /*Margins for content column. Should be "0 RightColumnWidth 0 LeftColumnWidth*/
+}
+
+#leftcolumn
+{
+  float: left;
+  width: 203px; /*Width of left column*/
+  margin-left: -100%;
+}
+
+#rightcolumn
+{
+  float: left;
+  width: 203px; /*Width of right column*/
+  margin-left: -225px; /*Set left marginto -(RightColumnWidth)*/
+}
+
+.column
+{
+  border: 1px solid;
+  display: none;  
+}
+
+#map
+{
+  width: 80%; 
+  /*height: 100%; */
+  height: 500px;
+  border: 2px solid black;
+}
+#right_panel{
+	position: relative;
+	float: right;
+	width:100%;
+	height:100%;
+	border: solid 2px black;
+}
+
+.left
+{
+	clear: left;
+}
+
+.infoDiv
+{
+  padding: 10px;  
+}
+
+.button
+{
+  text-decoration: underline;
+  cursor: pointer;  
+}
