@@ -15,7 +15,11 @@ html
 
   padding-top: 9px;
   padding-bottom: 9px;
-  display: none;
+  display: block;
+}
+
+#login_box_text{
+  display: block;  
 }
 
 #map
