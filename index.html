@@ -4,12 +4,10 @@
     <meta charset="utf-8" />
     <title>Narabazi</title>
     
-	
 	<link rel="stylesheet" href="lib/wax/ext/leaflet.css" />
     <link rel="stylesheet" href="lib/narabazi_frontend.css" />
-
     
-	<!--    jQuery libraray-->
+	<!-- jQuery libraray-->
     <script src="lib/jquery-1.8.0.min.js" type="text/javascript"></script>
 
     <!-- leaflet styles: the tile importer -->
@@ -21,21 +19,53 @@
     <script src="lib/Narabazi.js" type="text/javascript"></script>
     <script src="lib/NarabaziLocation.js" type="text/javascript"></script>
 	<script src="lib/NarabaziFrontend.js" type="text/javascript"></script>  
-    
+
+	<!--Frontend CSS -->
+	<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="lib/narabazi_frontend.css" />
+	<!--Bootstrap CSS -->
+	<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	
 		 
   <body>
-    <section>
-      <h1>Narabazi test</h2>
-	</section>
-	
-	<div id='map' >
-	<!--Error: div#map.leaflet-container.leaflet-fade-anim 1246px x 0px-->
-	</div>
-	
-	<div id='right_panel' >
-		
-	</div>	
+		<!--Container-->
+		<div class="container-fluid offset1" id="container">
+			<div class="row-fluid">
+				<div class="span11" id="header">
+				<!--Header-->
+			
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span8" id="map">
+					<!--Map content-->
+				</div>
+				<div class="span3">
+					<div class="row-fluid">
+						<div class="span12" id="text">
+							<!--Text content-->
+							Click on the markers to display the related text, pictures and videos
+						</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span12" id="picture">
+							<!--Picture content-->
+						</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span12" id="video">
+							<!--Text content-->
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span11" id="footer">
+					<!--Footer-->
+					 © 2012 Karkhana Collective. All Rights Reserved.
+				</div>
+			</div>
+		</div>
 	
   </body>
 </html>
