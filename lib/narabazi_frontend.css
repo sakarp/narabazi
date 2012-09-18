@@ -1,60 +1,59 @@
-#contentwrapper
-{
-  float: left;
-  width: 100%;
+/*//to test the divs 
+.span1,.span2,.span3,.span4,.span5,.span6,.span7,.span8,.span9,.span10,.span11,.span12{
+	border: solid 1px orange;
+}
+*/
+#map{
+	margin-top: 10px;
+	padding-top:10px;
+	width: 60%; 
+	//height: 100%; 
+	height: 500px;			
+	//border: 2px solid green;
 }
 
-#contentcolumn{
-  margin: 0 230px 0 230px; /*Margins for content column. Should be "0 RightColumnWidth 0 LeftColumnWidth*/
+#header{
+	//width: 1024px;		/* width n' height of first line in sprite*/
+	height: 226px;
+	width: 90%;
+	background-color:white;
+	background-image:url(image/narabazi.png);
+	background-repeat:no-repeat;
+	background-position:center center;
+	margin: 0 auto;
 }
 
-#leftcolumn
-{
-  float: left;
-  width: 203px; /*Width of left column*/
-  margin-left: -100%;
+#text{
+	margin-top: 10px;
+	padding:5px 5px 5px 5px;
+	width: 100%; 
+	height: 100%; 
+	display:block;
+	background-color:#e67171;
+	color:white;
+	font-family:Gill Sans MT;
+	font-size:20px;
+	text-align:justified;
+	//border: 2px solid green;
 }
 
-#rightcolumn
-{
-  float: left;
-  width: 203px; /*Width of right column*/
-  margin-left: -225px; /*Set left marginto -(RightColumnWidth)*/
+#picture,#video{
+	margin-top: 10px;
+	padding-top:5px;
+	width: 100%; 
+	height: 100%; 
 }
 
-.column
-{
-  border: 1px solid;
-  display: none;  
-}
-
-#map
-{
-  width: 80%; 
-  /*height: 100%; */
-  height: 500px;
-  border: 2px solid black;
-}
-#right_panel{
-	position: relative;
-	float: right;
-	width:100%;
-	height:100%;
-	border: solid 2px black;
-}
-
-.left
-{
-	clear: left;
-}
-
-.infoDiv
-{
-  padding: 10px;  
-}
-
-.button
-{
-  text-decoration: underline;
-  cursor: pointer;  
+#footer{
+	margin-top: 10px;
+	padding-top:5px;
+	width: 90%; 
+	height: 100%; 
+	display:block;
+	background-color:#e67171;
+	color:white;
+	font-family:Gill Sans MT;
+	font-size:14px;
+	text-align:center;
+	//border: 2px solid green;
 }
