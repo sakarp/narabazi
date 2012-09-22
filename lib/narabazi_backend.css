@@ -5,6 +5,16 @@ html
   color: #222;
 }
 
+#button_close
+{
+  background-image: url('../images/close.png');
+  font-size: 0px;
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 30px;
+}
+
 .nav li
 {
   padding-top: 3px;
